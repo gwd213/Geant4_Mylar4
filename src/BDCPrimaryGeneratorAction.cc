@@ -26,7 +26,7 @@ void BDCPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 	G4IonTable* ionTable = G4IonTable::GetIonTable();
 	G4ParticleDefinition* ion
 		= ionTable -> GetIon(50,132,0); //(Z,A,0)
-	kineticEnergy = 200.*MeV; //Kinetic Energy of the ion
+	kineticEnergy = 200.*132*MeV; //Kinetic Energy of the ion
 	fParticleGun -> GeneratePrimaryVertex(anEvent);
 	fParticleGun -> SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
 
