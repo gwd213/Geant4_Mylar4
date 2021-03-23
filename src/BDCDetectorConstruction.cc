@@ -66,7 +66,7 @@ G4VPhysicalVolume* BDCDetectorConstruction::Construct()
 	G4double detector_size = 5*mm;
 	G4double detector_offset_z = 1*mm;
 	//---------------Mylar Thick ---------------------------//
-	G4double detector_Thick = 50*um;
+	G4double detector_Thick = 5*um;
 	// -----------------------------------------------------
 	
 	//////////////////////////////////////////////

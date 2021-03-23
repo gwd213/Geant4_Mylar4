@@ -19,6 +19,10 @@ BDCPrimaryGeneratorAction::BDCPrimaryGeneratorAction()
 	fParticleGun = new G4ParticleGun(n_particle);
 }
 
+BDCPrimaryGeneratorAction::~BDCPrimaryGeneratorAction()
+{
+	delete fParticleGun;
+}
 
 void BDCPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
@@ -27,15 +31,11 @@ void BDCPrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 	G4ParticleDefinition* ion
 		= ionTable -> GetIon(50,132,0); //(Z,A,0)
 	kineticEnergy = 200.*132*MeV; //Kinetic Energy of the ion
-	fParticleGun -> GeneratePrimaryVertex(anEvent);
 	fParticleGun -> SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
 
 
 	fParticleGun -> SetParticleDefinition(ion);
 	fParticleGun -> SetParticleEnergy(kineticEnergy);
-}
 
-BDCPrimaryGeneratorAction::~BDCPrimaryGeneratorAction()
-{
-	delete fParticleGun;
+	fParticleGun -> GeneratePrimaryVertex(anEvent);
 }
