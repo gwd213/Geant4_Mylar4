@@ -1,15 +1,15 @@
 # Geant4_Mylar #
 
 
-## ÇÊ¿ä Package ##
+## í•„ìš” Package ##
 - CLHEP(2.4.4.1)
 - ROOT v.6.22.06
 - Geant4 1.10.6
-- QT(¼±ÅÃ»çÇ×)
+- QT(ì„ íƒì‚¬í•­)
 
-ROOTÀÇ °æ¿ì ´õ ³·Àº ¹öÀüÀ» »ç¿ëÇØµµ µÇ³ª, ¹®Á¦°¡ »ı±æ °¡´É¼ºÀÌ ÀÖÀ½.(ÇöÀç ÄÚµå»óÀº ±¦Âú´Ù)
+ROOTì˜ ê²½ìš° ë” ë‚®ì€ ë²„ì „ì„ ì‚¬ìš©í•´ë„ ë˜ë‚˜, ë¬¸ì œê°€ ìƒê¸¸ ê°€ëŠ¥ì„±ì´ ìˆìŒ.(í˜„ì¬ ì½”ë“œìƒì€ ê´œì°®ë‹¤)
 
-## ½ÇÇà¹æ¹ı ##
+## ì‹¤í–‰ë°©ë²• ##
 
     $ git clone https://github.com/gwd213/Geant4_Mylar.git
     $ cd Geant4_Mylar
@@ -26,30 +26,30 @@ ROOTÀÇ °æ¿ì ´õ ³·Àº ¹öÀüÀ» »ç¿ëÇØµµ µÇ³ª, ¹®Á¦°¡ »ı±æ °¡´É¼ºÀÌ ÀÖÀ½.(ÇöÀç ÄÚµå»ó
 
 	1) BDCDetectorConstruction.cc
 
-	- **Mylar µÎ²²,»çÀÌÁî º¯°æ °¡´É** 
+	- **Mylar ë‘ê»˜,ì‚¬ì´ì¦ˆ ë³€ê²½ ê°€ëŠ¥** 
 
 	default : detector_size = 5mm,detector_Thick=50um
 	
-	- **Mylar À§Ä¡ º¯°æ °¡´É**
+	- **Mylar ìœ„ì¹˜ ë³€ê²½ ê°€ëŠ¥**
 	
 	default : detector_offset_z = 1mm 
-	(Æ¯º°ÇÑ ÀÏÀÌ ¾ø´Ù¸é,  zÃà À§Ä¡ Á¦¿Ü º¯°æÇÏÁö ¾Ê¾Æµµ µÈ´Ù)
+	(íŠ¹ë³„í•œ ì¼ì´ ì—†ë‹¤ë©´,  zì¶• ìœ„ì¹˜ ì œì™¸ ë³€ê²½í•˜ì§€ ì•Šì•„ë„ ëœë‹¤)
 
 	2) BDCPrimaryGeneratorAction.cc
 	
-	- **Ion Á¾·ù º¯°æ °¡´É**
+	- **Ion ì¢…ë¥˜ ë³€ê²½ ê°€ëŠ¥**
 
 	default : GetIon(50,132,0) 132Sn
 
-	- **Kinetic Energy º¯°æ °¡´É**
+	- **Kinetic Energy ë³€ê²½ ê°€ëŠ¥**
 	
-	default : kineticEnergy = 200.MeV
-
+	default : kineticEnergy = 200.*132MeV (132Sn : 200MeV/u)
+	
 ##macro file(myrun)##
 
-	$ ./example myrun -> myrun.rootÀÇ ÆÄÀÏÀ» »ı¼º
+	$ ./example myrun -> myrun.rootì˜ íŒŒì¼ì„ ìƒì„±
 	
-	**Runnumber º¯°æ °¡´É##
+	**Runnumber ë³€ê²½ ê°€ëŠ¥##
 	
 	$ vi myrun
 	$ run/beamOn 200000(number of event)
